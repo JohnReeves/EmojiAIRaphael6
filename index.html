@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Emojiairaphael6 by JohnReeves</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Emojiairaphael6</h1>
+      <h2 class="project-tagline"></h2>
+      <a href="https://github.com/JohnReeves/EmojiAIRaphael6" class="btn">View on GitHub</a>
+      <a href="https://github.com/JohnReeves/EmojiAIRaphael6/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/JohnReeves/EmojiAIRaphael6/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="1-last-worksheet" class="anchor" href="#1-last-worksheet" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1. Last Worksheet</h1>
+
+<p><img src="http://i.imgur.com/zK4xZhV.png" alt="Imgur"></p>
+
+<p>Find and open your JSFiddle link from last week - as we're going to add random mutations to our emojis!</p>
+
+<h1>
+<a id="2-global-variables" class="anchor" href="#2-global-variables" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2. Global Variables</h1>
+
+<p>Mutations are an incredibly small chance of something "different" from the parents genetics happen - this is how evolution slowly works.</p>
+
+<p>Firstly, we need to create ourselves a random variable to hold the chance of something random happening. Global variables go at the top of the page. I'm going to give my emojis a 2% chance of mutating like this:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> mutationChance <span class="pl-k">=</span> <span class="pl-c1">2</span>;</pre></div>
+
+<p>My code looks like this:</p>
+
+<p><img src="http://i.imgur.com/faduH9s.png" alt="Imgur"></p>
+
+<h1>
+<a id="3-genetic-algorithm" class="anchor" href="#3-genetic-algorithm" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3. Genetic Algorithm</h1>
+
+<p>We can then go back into our <code>breedEmojis</code> function and take a look at the chance of each attribute being taken from the parentA or parentB.</p>
+
+<p>Because we're calculating chance as a percentage (1 to 100) - we can add an if to check if the percentage is less than our mutationChance like this:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">if</span>(fillChance <span class="pl-k">&lt;</span> mutationChance){
+  <span class="pl-c">//mutate!</span>
+} <span class="pl-k">else</span> <span class="pl-k">if</span> (fillChance <span class="pl-k">&lt;</span> <span class="pl-c1">50</span>){
+  <span class="pl-smi">babyEmoji</span>.<span class="pl-smi">fill</span> <span class="pl-k">=</span> A_fill;
+} <span class="pl-k">else</span> {
+  <span class="pl-smi">babyEmoji</span>.<span class="pl-smi">fill</span> <span class="pl-k">=</span> B_fill;
+}</pre></div>
+
+<p>We can then mutate that attribute by calculating an entirely random value, which is how we set up our original emojis:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">babyEmoji</span>.<span class="pl-smi">fill</span> <span class="pl-k">=</span>  fillColours[<span class="pl-en">randomNumber</span>(<span class="pl-c1">0</span>, <span class="pl-smi">fillColours</span>.<span class="pl-c1">length</span>)];</pre></div>
+
+<p>You'll need to do this for all your properties that you want to mutate. You can also have a go at increasing the mutation rate by increasing the <code>mutationChance</code> variable.</p>
+
+<p>My code looks like this:
+<img src="http://i.imgur.com/4VCfphj.png" alt="Imgur"></p>
+
+<h1>
+<a id="4-finishing" class="anchor" href="#4-finishing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4. Finishing</h1>
+
+<p>This is the final worksheet - but you can always extend your project by adding more attributes to your emojis, different features they could all have! </p>
+
+<p><img class="emoji" title=":star:" alt=":star:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/2b50.png" height="20" width="20" align="absmiddle"> Don't forget to save your JSFiddle and send us your awesome project! <img class="emoji" title=":star2:" alt=":star2:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f31f.png" height="20" width="20" align="absmiddle"></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/JohnReeves/EmojiAIRaphael6">Emojiairaphael6</a> is maintained by <a href="https://github.com/JohnReeves">JohnReeves</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
