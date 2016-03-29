@@ -1,0 +1,53 @@
+#1. Last Worksheet
+
+![Imgur](http://i.imgur.com/zK4xZhV.png)
+
+Find and open your JSFiddle link from last week - as we're going to add random mutations to our emojis!
+
+#2. Global Variables
+
+Mutations are an incredibly small chance of something "different" from the parents genetics happen - this is how evolution slowly works.
+
+Firstly, we need to create ourselves a random variable to hold the chance of something random happening. Global variables go at the top of the page. I'm going to give my emojis a 2% chance of mutating like this:
+
+```js
+var mutationChance = 2;
+```
+
+My code looks like this:
+
+![Imgur](http://i.imgur.com/faduH9s.png)
+
+#3. Genetic Algorithm
+
+We can then go back into our `breedEmojis` function and take a look at the chance of each attribute being taken from the parentA or parentB.
+
+Because we're calculating chance as a percentage (1 to 100) - we can add an if to check if the percentage is less than our mutationChance like this:
+
+```js
+if(fillChance < mutationChance){
+  //mutate!
+} else if (fillChance < 50){
+  babyEmoji.fill = A_fill;
+} else {
+  babyEmoji.fill = B_fill;
+}
+```
+
+We can then mutate that attribute by calculating an entirely random value, which is how we set up our original emojis:
+
+```js
+babyEmoji.fill =  fillColours[randomNumber(0, fillColours.length)];
+```
+
+You'll need to do this for all your properties that you want to mutate. You can also have a go at increasing the mutation rate by increasing the `mutationChance` variable.
+
+My code looks like this:
+![Imgur](http://i.imgur.com/4VCfphj.png)
+
+#4. Finishing
+
+This is the final worksheet - but you can always extend your project by adding more attributes to your emojis, different features they could all have! 
+
+:star: Don't forget to save your JSFiddle and send us your awesome project! :star2:
+
